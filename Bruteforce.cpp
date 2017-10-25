@@ -19,9 +19,20 @@ void myFlush(){ //Flush stdin //added
     // do not using fflush(stdin) btw, some people said that if fflush(stdin) is not safe
 }
 
+int bruteForce(char *search, char *pattern, int slen, int plen) { //BruteForce algo added
+    int i, j, k;
+
+    for (i = 0; i <= slen - plen; i++) {
+            for (j = 0, k = i; (search[k] == pattern[j]) &&
+                    (j < plen); j++, k++);
+            if (j == plen)
+                    return j;
+    }
+    return -1;
+}
+
 //Function Prototype
 void prima(),bsort(),kalimatriks(),menuBF();
-int bruteForce(char *search, char *pattern, int slen, int plen);
 
 main(){
 	setConsolColor(); //set color
@@ -169,16 +180,4 @@ void menuBF() { //boyfriend ? wkwkw // here is your code from main
     getch();
     system("cls");
     return;
-}
-
-int bruteForce(char *search, char *pattern, int slen, int plen) { //BruteForce algo added
-    int i, j, k;
-
-    for (i = 0; i <= slen - plen; i++) {
-            for (j = 0, k = i; (search[k] == pattern[j]) &&
-                    (j < plen); j++, k++);
-            if (j == plen)
-                    return j;
-    }
-    return -1;
 }
