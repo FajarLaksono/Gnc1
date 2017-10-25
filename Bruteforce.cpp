@@ -21,7 +21,7 @@ void myFlush(){ //Flush stdin //added
 
 //Function Prototype
 void prima(),bsort(),kalimatriks(),menuBF();
-int bruteForce();
+int bruteForce(char *search, char *pattern, int slen, int plen);
 
 main(){
 	setConsolColor(); //set color
